@@ -16,12 +16,15 @@ class User extends Model{
 // post.app = "hello there";
 // post.save();
 //
-const user:any = new User;
-user.name = "Test User";
-user.email = "test@test.com";
-user.save();
+
 
 const test  = async ()=>{
+
+    const user:any = await User.find(112955940751436660000);
+    user.name = "Test User modified";
+    user.email = "new email heretest@test.com";
+    user.save();
+
     // const page:any = await Page.find(486146737788467400000);
     // page.delete();
 };

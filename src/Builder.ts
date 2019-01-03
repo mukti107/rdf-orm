@@ -25,7 +25,7 @@ export class Builder {
         PREFIX id: <id:>
         ${this.type === TYPE_QUERY? 'SELECT '+this.tripletString(this.selectTriplet, '')+'FROM <'+this.getGraph()+'> WHERE { '+this.tripletsString(this.conditionsTriplets)+' } '+(this.limit>0 ? "LIMIT "+this.limit : '') : ''}
         ${this.type === TYPE_UPDATE && this.removeTriplets.length>0 ? 'WITH <'+this.getGraph()+'> DELETE {'+this.tripletsString(this.removeTriplets)+'} '+ 'WHERE { '+this.tripletsString(this.conditionsTriplets)+' };' : ''}
-        ${this.type === TYPE_UPDATE && this.insertTriplets.length>0 ? 'WITH <'+this.getGraph()+'> INSERT {'+this.tripletsString(this.insertTriplets)+'} '+ 'WHERE { '+this.tripletsString(this.conditionsTriplets)+' };' : ''}
+        ${this.type === TYPE_UPDATE && this.insertTriplets.length>0 ? 'INSERT DATA { GRAPH <'+this.getGraph()+'> {'+this.tripletsString(this.insertTriplets)+'} };' : ''}
         `.replace(/\n\s+/g, " ")
     }
 

@@ -1,12 +1,20 @@
 {
   "name": "rdf-orm",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "description": "Object Relation Mapping for RDF",
   "main": "lib/index.js",
   "scripts": {
     "test": "tsc && node ./lib/test.js"
   },
-  "author": "Rachindra Poudel",
+  "author": {
+    "name":"Rachindra Poudel",
+    "email":"mukti107@gmail.com"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mukti107/rdf-orm.git"
+  },
+  "homepage": "https://github.com/mukti107/rdf-orm#readme",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0"
